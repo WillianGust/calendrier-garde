@@ -12,7 +12,7 @@
 <body class="container">
 
   <div class="form-group mt-3 mb-3">
-    <label for="yearSelector">Selecione o ano:</label>
+    <label for="yearSelector">Choisir l'année:</label>
     <select id="yearSelector" class="form-control" onchange="updateCalendar()">
       <!-- Adicione os anos desejados ao dropdown -->
       <option value="2024">2024</option>
@@ -35,6 +35,7 @@
       <!-- Adicione mais anos conforme necessário -->
     </select>
   </div>
+  <button class="btn btn-outline-danger" onclick="printCalendar()">Imprimer</button>
 
   <div class="row" id="calendarContainer">
     <!-- O calendário será gerado aqui -->

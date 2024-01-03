@@ -96,3 +96,29 @@ function updateCalendar() {
 
 // Inicializa o calendário com o ano atual
 updateCalendar();
+
+function printCalendar() {
+  const calendarContainer = document.getElementById("calendarContainer");
+  const printContent = document.createElement("div");
+  printContent.innerHTML = `
+    <h1>Calendário Anual</h1>
+    <div style="overflow-x: auto;">${calendarContainer.innerHTML}</div>
+  `;
+
+  const printWindow = window;
+
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Calendário Anual</title>
+        <style>
+          @page { size: letter landscape; margin: 10mm; }
+        </style>
+      </head>
+      <body onload="window.print();">
+        ${printContent.innerHTML}
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+}
